@@ -1,131 +1,174 @@
-//Policy class
-class Policy {
-    // Attributes
-    private int policyNumber;
-    private String providerName;
-    private String policyHolderFirstName;
-    private String policyHolderLastName;
-    private int policyHolderAge;
-    private String smokingStatus; // "smoker" or "non-smoker"
-    private double policyHolderHeight; // in inches
-    private double policyHolderWeight; // in pounds
+/**
+ * This class represents an insurance policy.
+ */
+public class Policy {
+   private String policyNumber;
+   private String providerName;
+   private String policyHolderFirstName;
+   private String policyHolderLastName;
+   private int policyHolderAge;
+   private String policyHolderSmokingStatus; // "smoker" or "non-smoker"
+   private double policyHolderHeight; // in inches
+   private double policyHolderWeight; // in pounds
 
-    // No-arg constructor (default values)
-    public Policy() {
-        this.policyNumber = 0;
-        this.providerName = "";
-        this.policyHolderFirstName = "";
-        this.policyHolderLastName = "";
-        this.policyHolderAge = 0;
-        this.smokingStatus = "non-smoker";
-        this.policyHolderHeight = 0.0;
-        this.policyHolderWeight = 0.0;
-    }
-
-    // Constructor with arguments
-    public Policy(int policyNumber, String providerName, String policyHolderFirstName, String policyHolderLastName,
-                  int policyHolderAge, String smokingStatus, double policyHolderHeight, double policyHolderWeight) {
-        this.policyNumber = policyNumber;
-        this.providerName = providerName;
-        this.policyHolderFirstName = policyHolderFirstName;
-        this.policyHolderLastName = policyHolderLastName;
-        this.policyHolderAge = policyHolderAge;
-        this.smokingStatus = smokingStatus;
-        this.policyHolderHeight = policyHolderHeight;
-        this.policyHolderWeight = policyHolderWeight;
-    }
-
+  
+   // No-arg constructor (default values)
+   public Policy() {
+      this.policyNumber = "";
+      this.providerName = "";
+      this.policyHolderFirstName = "";
+      this.policyHolderLastName = "";
+      this.policyHolderAge = 0;
+      this.policyHolderSmokingStatus = "non-smoker";
+      this.policyHolderHeight = 0.0;
+      this.policyHolderWeight = 0.0;
+      }
+  
+  
+  
+  
+   /**
+    * Constructor to initialize the Policy object.
+    *
+    * @param policyNumber   The policy number.
+    * @param providerName   The provider name.
+    * @param firstName      The policyholder's first name.
+    * @param lastName       The policyholder's last name.
+    * @param age            The policyholder's age.
+    * @param smokingStatus  The policyholder's smoking status (smoker/non-smoker).
+    * @param height         The policyholder's height (in inches).
+    * @param weight         The policyholder's weight (in pounds).
+    */
+   public Policy(String policyNumber, String providerName, String firstName, String lastName, int age, String smokingStatus, double height, double weight) {
+      this.policyNumber = policyNumber;
+      this.providerName = providerName;
+      this.policyHolderFirstName = firstName;
+      this.policyHolderLastName = lastName;
+      this.policyHolderAge = age;
+      this.policyHolderSmokingStatus = smokingStatus;
+      this.policyHolderHeight = height;
+      this.policyHolderWeight = weight;
+      }
     // Setters and Getters
-    public int getPolicyNumber() {
-        return policyNumber;
-    }
+   public String getPolicyNumber() {
+      return policyNumber;
+      }
 
-    public void setPolicyNumber(int policyNumber) {
-        this.policyNumber = policyNumber;
-    }
+   public void setPolicyNumber(String policyNumber) {
+      this.policyNumber = policyNumber;
+      }
 
-    public String getProviderName() {
-        return providerName;
-    }
+   public String getProviderName() {
+      return providerName;
+      }
 
-    public void setProviderName(String providerName) {
-        this.providerName = providerName;
-    }
+   public void setProviderName(String providerName) {
+      this.providerName = providerName;
+      }
 
-    public String getPolicyHolderFirstName() {
-        return policyHolderFirstName;
-    }
+   public String getPolicyHolderFirstName() {
+      return policyHolderFirstName;
+      }
+   public void setPolicyHolderFirstName(String policyHolderFirstName) {
+      this.policyHolderFirstName = policyHolderFirstName;
+      }
 
-    public void setPolicyHolderFirstName(String policyHolderFirstName) {
-        this.policyHolderFirstName = policyHolderFirstName;
-    }
+   public String getPolicyHolderLastName() {
+      return policyHolderLastName;
+      }
 
-    public String getPolicyHolderLastName() {
-        return policyHolderLastName;
-    }
+   public void setPolicyHolderLastName(String policyHolderLastName) {
+      this.policyHolderLastName = policyHolderLastName;
+      }
 
-    public void setPolicyHolderLastName(String policyHolderLastName) {
-        this.policyHolderLastName = policyHolderLastName;
-    }
+   public int getPolicyHolderAge() {
+      return policyHolderAge;
+      }
 
-    public int getPolicyHolderAge() {
-        return policyHolderAge;
-    }
+   public void setPolicyHolderAge(int policyHolderAge) {
+      this.policyHolderAge = policyHolderAge;
+      }
 
-    public void setPolicyHolderAge(int policyHolderAge) {
-        this.policyHolderAge = policyHolderAge;
-    }
+   public String getPolicyHolderSmokingStatus() {
+      return policyHolderSmokingStatus;
+      }
 
-    public String getSmokingStatus() {
-        return smokingStatus;
-    }
+   public void setPolicyHolderSmokingStatus(String smokingStatus) {
+      this.policyHolderSmokingStatus = smokingStatus;
+      }
 
-    public void setSmokingStatus(String smokingStatus) {
-        this.smokingStatus = smokingStatus;
-    }
+   public double getPolicyHolderHeight() {
+      return policyHolderHeight;
+      }
 
-    public double getPolicyHolderHeight() {
-        return policyHolderHeight;
-    }
+   public void setPolicyHolderHeight(double policyHolderHeight) {
+      this.policyHolderHeight = policyHolderHeight;
+      }
 
-    public void setPolicyHolderHeight(double policyHolderHeight) {
-        this.policyHolderHeight = policyHolderHeight;
-    }
+   public double getPolicyHolderWeight() {
+      return policyHolderWeight;
+      }
 
-    public double getPolicyHolderWeight() {
-        return policyHolderWeight;
-    }
+   public void setPolicyHolderWeight(double policyHolderWeight) {
+      this.policyHolderWeight = policyHolderWeight;
+      }
 
-    public void setPolicyHolderWeight(double policyHolderWeight) {
-        this.policyHolderWeight = policyHolderWeight;
-    }
+   
 
-    // Method to calculate BMI
-    public double calculateBMI() {
-        return (policyHolderWeight * 703) / (policyHolderHeight * policyHolderHeight);
-    }
+   /**
+    * Calculates the BMI (Body Mass Index) of the policyholder.
+    *
+    * @return the BMI value.
+    */
+   public double calculateBMI() {
+      return (policyHolderWeight * 703) / (policyHolderHeight * policyHolderHeight);
+      }
+   /**
+    * Calculates the price of the policy.
+    *
+    * @return the calculated price.
+    */
+   public double calculatePolicyPrice() {
+      double basePrice = 600.00;
+      if (policyHolderAge > 50) {
+         basePrice += 75.00;
+         }
+      if (policyHolderSmokingStatus.equalsIgnoreCase("smoker")) {
+         basePrice += 100.00;
+         }
+      if (calculateBMI() > 35) {
+         basePrice += (calculateBMI() - 35) * 20;
+         }
+      return basePrice;
+      }
 
-    // Method to calculate policy price
-    public double calculatePolicyPrice() {
-        double baseFee = 600.0;
-        double additionalFee = 0.0;
+   /**
+    * Returns the policy information as a formatted string.
+    *
+    * @return the policy details string.
+    */
+   @Override
+   public String toString() {
+      return "Policy Number: " + policyNumber + "\n" +
+            "Provider Name: " + providerName + "\n" +
+            "Policyholder's First Name: " + policyHolderFirstName + "\n" +
+            "Policyholder's Last Name: " + policyHolderLastName + "\n" +
+            "Policyholder's Age: " + policyHolderAge + "\n" +
+            "Policyholder's Smoking Status (smoker/non-smoker): " + policyHolderSmokingStatus + "\n" +
+            "Policyholder's Height: " + policyHolderHeight + " inches\n" +
+            "Policyholder's Weight: " + policyHolderWeight + " pounds\n" +
+            String.format("Policyholder's BMI: %.2f\n", calculateBMI()) +
+            String.format("Policy Price: $%.2f\n", calculatePolicyPrice());
+      }
 
-        // Additional fee if the policyholder is over 50
-        if (policyHolderAge > 50) {
-            additionalFee += 75.0;
-        }
+   /**
+    * Checks if the policyholder is a smoker.
+    *
+    * @return true if the policyholder is a smoker, false otherwise.
+    */
+   public boolean isSmoker() {
+      return policyHolderSmokingStatus.equalsIgnoreCase("smoker");
+      }
+   }
 
-        // Additional fee if the policyholder is a smoker
-        if (smokingStatus.equalsIgnoreCase("smoker")) {
-            additionalFee += 100.0;
-        }
 
-        // Additional fee if BMI is over 35
-        double bmi = calculateBMI();
-        if (bmi > 35) {
-            additionalFee += (bmi - 35) * 20;
-        }
-
-        return baseFee + additionalFee;
-    }
-}
