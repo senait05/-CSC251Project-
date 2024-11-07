@@ -2,13 +2,11 @@
  * This class represents an insurance policy.
  */
 public class Policy {
-  
+   private static int policyCount=0;
    private String policyNumber;
    private String providerName;
    private double policyPrice;
    private PolicyHolder policyHolder;
-   
-
   
    // constructor
   
@@ -17,7 +15,7 @@ public class Policy {
         this.providerName = providerName;
         this.policyHolder = policyHolder;
         this.policyPrice = policyPrice;
-       // policyCount++;
+        policyCount++;
     }
 
     /**
