@@ -2,15 +2,14 @@
  * This class represents an insurance policy.
  */
 public class Policy {
-   private static int policyCount=0;
-   private String policyNumber;
-   private String providerName;
-   private double policyPrice;
-   private PolicyHolder policyHolder;
-  
-   // constructor
-  
-   public Policy(String policyNumber, String providerName, PolicyHolder policyHolder, double policyPrice) {
+   private static int policyCount = 0; // Static field to track policy count
+    private String policyNumber;
+    private String providerName;
+    private double policyPrice;
+    private PolicyHolder policyHolder;
+
+    // Constructor
+    public Policy(String policyNumber, String providerName, PolicyHolder policyHolder, double policyPrice) {
         this.policyNumber = policyNumber;
         this.providerName = providerName;
         this.policyHolder = policyHolder;

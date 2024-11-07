@@ -26,12 +26,13 @@ public class Project_Senait_Ghebremichael {
                 double height = Double.parseDouble(scanner.nextLine());
                 double weight = Double.parseDouble(scanner.nextLine());
 
-                // Create a new Policy object and add to the list
-                Policy policy = new Policy(policyNumber, providerName, firstName, lastName, age, smokingStatus, height, weight);
+                // Create PolicyHolder and  Policy object and add to the list
+                PolicyHolder policyHolder = new PolicyHolder(policyNumber, providerName, firstName, lastName, age, smokingStatus, height, weight);
+                Policy policy = new Policy(policyNumber, providerName, policyHolder, calculatePolicyPrice(policyHolder));
                 policies.add(policy);
 
                 // Count smokers and non-smokers
-                if (policy.isSmoker()) {
+                if (policyHolder.isSmoker()) {
                     smokerCount++;
                 } else {
                     nonSmokerCount++;
@@ -49,8 +50,25 @@ public class Project_Senait_Ghebremichael {
             System.out.println();
         }
 
-        // Display the number of smokers and non-smokers
+        // Display the number of smokers and non-smokers and Policy Objects
+        System.out.println("There are: " + Policy.getPolicyCount()+" Policy Objects Created");
         System.out.println("The number of policies with a smoker is: " + smokerCount);
         System.out.println("The number of policies with a non-smoker is: " + nonSmokerCount);
+        }
+        
+            /**
+     * Calculate the policy price based on policyholder details.
+     * @param policyHolder The policyholder associated with the policy
+     * @return The calculated policy price
+     */
+    public static double calculatePolicyPrice(PolicyHolder policyHolder) {
+        double basePrice = 600;
+        if (policyHolder.isSmoker()) {
+            basePrice += 100;
+        }
+        if (policyHolder.calculateBMI() > 25) {
+            basePrice += 75;
+        }
+        return basePrice;
     }
 }
